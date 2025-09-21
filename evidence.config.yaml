@@ -79,4 +79,6 @@ plugins:
     "@evidence-dev/sqlite": { }
     "@evidence-dev/trino": { }
     "@evidence-dev/motherduck": { }
-    
+
+deployment:
+  basePath: ${process.env.VITE_BASE_PATH || null}
