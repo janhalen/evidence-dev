@@ -81,4 +81,4 @@ plugins:
     "@evidence-dev/motherduck": { }
 
 deployment:
-  basePath: ${process.env.VITE_PUBLIC_BASE_PATH || null}
+  basePath: /evidence-dev
