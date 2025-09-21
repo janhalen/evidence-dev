@@ -21,9 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        env:
-          VITE_BASE_PATH: '/evidence-dev'
-        run: npm run build
+        run: VITE_BASE_PATH='/evidence-dev' EVIDENCE_BUILD_DIR=./build/evidence-dev npm run build
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
