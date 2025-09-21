@@ -20,12 +20,16 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-      - name: Build
-        run: npm run build
+      - name: Build and source data
+        env:
+          BASE_PATH: '/evidence-dev'
+        run: |
+          npm run sources
+          npm run build
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build/evidence-dev' # This path must match EVIDENCE_BUILD_DIR
+          path: './build/evidence-dev'
 
   deploy:
     environment:
